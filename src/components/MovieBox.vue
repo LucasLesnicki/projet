@@ -2,6 +2,7 @@
   <div class="movie-box">
     <img :src="movie.image" alt="Movie Poster" />
     <p>{{ movie.title }}</p>
+    <button @click="addToCart">Adicionar ao Carrinho</button>
   </div>
 </template>
 
@@ -11,6 +12,11 @@ export default {
     movie: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    addToCart() {
+      // Lógica para adicionar o filme ao carrinho
     }
   }
 }

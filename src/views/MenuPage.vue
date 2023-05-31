@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Menu</h1>
-    <div class="movie-container">
-      <movie-box v-for="movie in movies" :key="movie.id" :movie="movie"></movie-box>
+    <div class="movie-container movie-grid">
+      <MovieBox v-for="movie in movies" :key="movie.id" :movie="movie" class="col-5"></MovieBox>
     </div>
     <button @click="goToCart">Carrinho</button>
   </div>
@@ -47,6 +47,16 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.col-5 {
+  flex-basis: 20%;
 }
 
 .movie-box {
