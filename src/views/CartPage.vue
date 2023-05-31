@@ -19,7 +19,7 @@
       }
     },
     methods: {
-      removeFromCart(movie) {
+      removeFromCart() {
         // Implemente a lógica para remover o filme do carrinho
       },
       closeCart() {
