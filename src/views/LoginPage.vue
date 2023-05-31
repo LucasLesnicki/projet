@@ -12,35 +12,37 @@
         </div>
         <button type="submit">Entrar</button>
       </form>
+      <p v-if="errorMessage">{{ errorMessage }}</p>
     </div>
   </template>
   
   <script>
-  import axios from 'axios';
+  import axios from '@/components/axios';
   
   export default {
     name: 'LoginPage',
     data() {
       return {
         email: '',
-        password: ''
+        password: '',
+        errorMessage: ''
       }
     },
     methods: {
       login() {
-        // Enviar solicitação de login para o JSON Server
-        axios.post('/login', {
-          email: this.email,
-          password: this.password
-        })
-        .then(response => {
-          // Tratar a resposta do servidor, redirecionar para página de sucesso de login, por exemplo
-          console.log(response.data);
-        })
-        .catch(error => {
-          // Tratar o erro do servidor, exibir mensagem de erro, por exemplo
-          console.error(error);
-        });
+        axios.get('/users')
+          .then(response => {
+            const users = response.data;
+            const user = users.find(u => u.email === this.email && u.password === this.password);
+            if (user) {
+              this.$router.push('/Menu');
+            } else {
+              this.errorMessage = 'Dados incorretos. Por favor, tente novamente.';
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
       }
     }
   }

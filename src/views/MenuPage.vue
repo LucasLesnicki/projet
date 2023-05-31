@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Menu</h1>
-    <div v-for="movie in movies" :key="movie.id">
-      <movie-box :movie="movie" @add-to-cart="addToCart"></movie-box>
+    <div class="movie-container">
+      <movie-box v-for="movie in movies" :key="movie.id" :movie="movie"></movie-box>
     </div>
     <button @click="goToCart">Carrinho</button>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import MovieBox from '@/components/MovieBox.vue'
-
+import axios from '@/components/axios';
 
 export default {
   components: {
@@ -18,18 +18,61 @@ export default {
   },
   data() {
     return {
-      movies: [
-        // Coloque aqui os dados dos filmes, como nome, imagem e ID
-      ]
+      movies: []
     }
   },
+  mounted() {
+    this.fetchMovies();
+  },
   methods: {
-    addToCart() {
-      // Implemente a lógica para adicionar o filme ao carrinho
+    fetchMovies() {
+      axios.get('/movies')
+        .then(response => {
+          this.movies = response.data;
+        })
+        .catch(error => {
+          console.error(error);
+        });
     },
     goToCart() {
-      // Implemente a lógica para redirecionar o usuário para a página do carrinho
+      this.$router.push('/Cart');
     }
   }
 }
 </script>
+
+<style scoped>
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-box {
+  width: 250px;
+  height: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: red;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  color: white;
+  font-family: "Comic Sans MS", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie-box img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.movie-box p {
+  margin: 0;
+}
+</style>

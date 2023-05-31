@@ -1,36 +1,46 @@
 <template>
-    <div class="movie-box">
-      <img :src="movie.image" :alt="movie.name">
-      <h3>{{ movie.name }}</h3>
-      <button @click="addToCart(movie)">Adicionar ao Carrinho</button>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      movie: {
-        type: Object,
-        required: true
-      }
-    },
-    methods: {
-      addToCart(movie) {
-        // Emitir um evento para adicionar o filme ao carrinho
-        this.$emit('add-to-cart', movie);
-      }
+  <div class="movie-box">
+    <img :src="movie.image" alt="Movie Poster" />
+    <p>{{ movie.title }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    movie: {
+      type: Object,
+      required: true
     }
   }
-  </script>
-  
-  <style scoped>
-  .movie-box {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .movie-box img {
-    width: 200px;
-    height: 300px;
-  }
-  </style>
-  
+}
+</script>
+
+<style scoped>
+.movie-box {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: red;
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  color: white;
+  font-family: "Comic Sans MS", cursive;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-box img {
+  width: 80%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.movie-box p {
+  margin: 0;
+}
+</style>
