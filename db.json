@@ -1,6 +1,9 @@
 {
   "users": [
     {
+      "id": 1,
+      "email": "lucaslesnicki@gmail.com",
+      "password": "1234",
       "cart": [
         {
           "id": 1,
@@ -16,9 +19,24 @@
           "id": 10,
           "name": "Capitã Marvel",
           "image": "@/assets/Captan_Marvel.png"
+        },
+        {
+          "id": 2,
+          "name": "Django",
+          "image": "@/assets/Django.png"
+        },
+        {
+          "id": 8,
+          "name": "Fuga em Nova York",
+          "image": "@/assets/Escape_from_New_York.png"
+        },
+        {
+          "id": 3,
+          "name": "Indiana Jones",
+          "image": "@/assets/Indiana_Jones.png"
         }
       ],
-      "id": 1
+      "shelf": []
     },
     {
       "id": 2,
@@ -26,6 +44,22 @@
       "password": "1234",
       "cart": [],
       "shelf": []
+    },
+    {
+      "name": "Lucas2",
+      "email": "lucaslesnicki188@gmail.com",
+      "password": "1234",
+      "cart": [],
+      "shelf": [],
+      "id": 3
+    },
+    {
+      "name": "111",
+      "email": "lucaslesnicki111228@gmail.com",
+      "password": "12345",
+      "cart": [],
+      "shelf": [],
+      "id": 4
     }
   ],
   "movies": [

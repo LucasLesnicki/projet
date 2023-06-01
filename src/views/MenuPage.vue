@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       movies: [],
-      cart: [], // Adiciona uma propriedade para armazenar os filmes no carrinho
       user: null, // Adiciona uma propriedade para armazenar os dados do usuário logado
     };
   },
@@ -42,7 +41,12 @@ export default {
       axios.get(`http://localhost:3000/users/${userId}`)
         .then(response => {
           this.user = response.data;
-          this.cart = this.user.cart || []; // Define o carrinho do usuário
+          if (!this.user.cart) {
+            this.user.cart = []; // Cria um carrinho vazio caso não exista
+          }
+          if (!this.user.shelf) {
+            this.user.shelf = []; // Cria uma estante vazia caso não exista
+          }
         })
         .catch(error => {
           console.error('Erro ao recuperar os dados do usuário:', error);
@@ -52,12 +56,12 @@ export default {
       this.$router.push('/Cart');
     },
     addToCart(movie) {
-      this.cart.push(movie); // Adiciona o filme ao carrinho
-      this.updateCart(); // Chama a função para atualizar o carrinho no db.json
+      this.user.cart.push(movie); // Adiciona o filme ao carrinho do usuário
+      this.updateUser(); // Chama a função para atualizar os dados do usuário no db.json
     },
-    updateCart() {
-      const userId = 1; // ID do usuário (substitua pelo ID correto)
-      axios.put(`http://localhost:3000/users/${userId}`, { cart: this.cart })
+    updateUser() {
+      const userId = this.user.id; // ID do usuário logado
+      axios.put(`http://localhost:3000/users/${userId}`, this.user)
         .then(response => {
           console.log(response.data);
         })

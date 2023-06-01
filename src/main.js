@@ -1,11 +1,10 @@
 import { createApp } from 'vue';
-import axios from 'axios';
 import App from './App.vue';
 import router from './router';
+import store from './store';
 
-// Configurar o axios
-axios.defaults.baseURL = 'http://localhost:8080';
-
-createApp(App)
+// eslint-disable-next-line no-unused-vars
+const app = createApp(App)
   .use(router)
+  .use(store)
   .mount('#app');

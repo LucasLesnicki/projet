@@ -17,6 +17,10 @@
   color: #2c3e50;
 }
 
+body {
+      background-color: #3498db; /* Altere para a cor desejada */
+    }
+
 nav {
   padding: 30px;
 
