@@ -2,7 +2,7 @@
   <div>
     <h1>Menu</h1>
     <div class="movie-container movie-grid">
-      <MovieBox v-for="movie in movies" :key="movie.id" :movie="movie" class="col-5"></MovieBox>
+      <MovieBox v-for="movie in movies" :key="movie.id" :movie="movie" class="col-5" @add-to-cart="addToCart"></MovieBox>
     </div>
     <button @click="goToCart">Carrinho</button>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import MovieBox from '@/components/MovieBox.vue';
-import moviesData from '../../db.json';
+import axios from 'axios';
 
 export default {
   components: {
@@ -18,12 +18,52 @@ export default {
   },
   data() {
     return {
-      movies: moviesData.movies,
+      movies: [],
+      cart: [], // Adiciona uma propriedade para armazenar os filmes no carrinho
+      user: null, // Adiciona uma propriedade para armazenar os dados do usuário logado
     };
   },
+  created() {
+    this.fetchMovies(); // Chama a função para buscar a lista de filmes
+    this.fetchUser(); // Chama a função para buscar os dados do usuário logado
+  },
   methods: {
+    fetchMovies() {
+      axios.get('http://localhost:3000/movies')
+        .then(response => {
+          this.movies = response.data;
+        })
+        .catch(error => {
+          console.error('Erro ao recuperar a lista de filmes:', error);
+        });
+    },
+    fetchUser() {
+      const userId = 1; // ID do usuário (substitua pelo ID correto)
+      axios.get(`http://localhost:3000/users/${userId}`)
+        .then(response => {
+          this.user = response.data;
+          this.cart = this.user.cart || []; // Define o carrinho do usuário
+        })
+        .catch(error => {
+          console.error('Erro ao recuperar os dados do usuário:', error);
+        });
+    },
     goToCart() {
       this.$router.push('/Cart');
+    },
+    addToCart(movie) {
+      this.cart.push(movie); // Adiciona o filme ao carrinho
+      this.updateCart(); // Chama a função para atualizar o carrinho no db.json
+    },
+    updateCart() {
+      const userId = 1; // ID do usuário (substitua pelo ID correto)
+      axios.put(`http://localhost:3000/users/${userId}`, { cart: this.cart })
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     },
   },
 };

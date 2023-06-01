@@ -22,7 +22,7 @@ export default {
       return image;
     },
     addToCart() {
-      // Lógica para adicionar o filme ao carrinho
+      this.$emit('add-to-cart', this.movie);
     }
   }
 }

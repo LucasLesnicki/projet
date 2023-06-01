@@ -1,21 +1,83 @@
 {
-    "users": [
-      { "id": 1, "email": "lucaslesnicki@gmail.com", "password": "1234" },
-      { "id": 2, "email": "lucaslesnicki18@gmail.com", "password": "1234" }
-    ],
-    "cart": [],
-    "shelf": [],
-    "movies": [
-      { "id": 1, "name": "Batman", "image": "@/assets/Batman.png" },
-      { "id": 2, "name": "Django", "image": "@/assets/Django.png" },
-      { "id": 3, "name": "Indiana Jones", "image": "@/assets/Indiana_Jones.png" },
-      { "id": 4, "name": "Jumper", "image": "@/assets/Jumper.png" },
-      { "id": 5, "name": "Matrix", "image": "@/assets/Matrix.png" },
-      { "id": 6, "name": "Matrix 2", "image": "@/assets/Matrix_2.png" },
-      { "id": 7, "name": "Ace Ventura", "image": "@/assets/Ace_Ventura.png" },
-      { "id": 8, "name": "Fuga em Nova York", "image": "@/assets/Escape_from_New_York.png" },
-      { "id": 9, "name": "Panico", "image": "@/assets/Panico.png" },
-      { "id": 10, "name": "Capitã Marvel", "image": "@/assets/Captan_Marvel.png" }
-    ]
-  }
-  
+  "users": [
+    {
+      "cart": [
+        {
+          "id": 1,
+          "name": "Batman",
+          "image": "@/assets/Batman.png"
+        },
+        {
+          "id": 3,
+          "name": "Indiana Jones",
+          "image": "@/assets/Indiana_Jones.png"
+        },
+        {
+          "id": 10,
+          "name": "Capitã Marvel",
+          "image": "@/assets/Captan_Marvel.png"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "id": 2,
+      "email": "lucaslesnicki18@gmail.com",
+      "password": "1234",
+      "cart": [],
+      "shelf": []
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "image": "@/assets/Batman.png"
+    },
+    {
+      "id": 2,
+      "name": "Django",
+      "image": "@/assets/Django.png"
+    },
+    {
+      "id": 3,
+      "name": "Indiana Jones",
+      "image": "@/assets/Indiana_Jones.png"
+    },
+    {
+      "id": 4,
+      "name": "Jumper",
+      "image": "@/assets/Jumper.png"
+    },
+    {
+      "id": 5,
+      "name": "Matrix",
+      "image": "@/assets/Matrix.png"
+    },
+    {
+      "id": 6,
+      "name": "Matrix 2",
+      "image": "@/assets/Matrix_2.png"
+    },
+    {
+      "id": 7,
+      "name": "Ace Ventura",
+      "image": "@/assets/Ace_Ventura.png"
+    },
+    {
+      "id": 8,
+      "name": "Fuga em Nova York",
+      "image": "@/assets/Escape_from_New_York.png"
+    },
+    {
+      "id": 9,
+      "name": "Panico",
+      "image": "@/assets/Panico.png"
+    },
+    {
+      "id": 10,
+      "name": "Capitã Marvel",
+      "image": "@/assets/Captan_Marvel.png"
+    }
+  ]
+}
