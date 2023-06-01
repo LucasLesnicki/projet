@@ -9,36 +9,24 @@
 </template>
 
 <script>
-import MovieBox from '@/components/MovieBox.vue'
-import axios from '@/components/axios';
+import MovieBox from '@/components/MovieBox.vue';
+import moviesData from '../../db.json';
 
 export default {
   components: {
-    MovieBox
+    MovieBox,
   },
   data() {
     return {
-      movies: []
-    }
-  },
-  mounted() {
-    this.fetchMovies();
+      movies: moviesData.movies,
+    };
   },
   methods: {
-    fetchMovies() {
-      axios.get('/movies')
-        .then(response => {
-          this.movies = response.data;
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
     goToCart() {
       this.$router.push('/Cart');
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

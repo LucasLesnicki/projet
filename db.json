@@ -6,26 +6,16 @@
     "cart": [],
     "shelf": [],
     "movies": [
-      { "id": 1, "name": "Filme 1", "image": "caminho/para/a/imagem1.jpg" },
-      { "id": 2, "name": "Filme 2", "image": "caminho/para/a/imagem2.jpg" },
-      { "id": 3, "name": "Filme 3", "image": "caminho/para/a/imagem3.jpg" },
-      { "id": 4, "name": "Filme 4", "image": "caminho/para/a/imagem4.jpg" },
-      { "id": 5, "name": "Filme 5", "image": "caminho/para/a/imagem5.jpg" },
-      { "id": 6, "name": "Filme 6", "image": "caminho/para/a/imagem6.jpg" },
-      { "id": 7, "name": "Filme 7", "image": "caminho/para/a/imagem7.jpg" },
-      { "id": 8, "name": "Filme 8", "image": "caminho/para/a/imagem8.jpg" },
-      { "id": 9, "name": "Filme 9", "image": "caminho/para/a/imagem9.jpg" },
-      { "id": 10, "name": "Filme 10", "image": "caminho/para/a/imagem10.jpg" },
-      { "id": 11, "name": "Filme 11", "image": "caminho/para/a/imagem11.jpg" },
-      { "id": 12, "name": "Filme 12", "image": "caminho/para/a/imagem12.jpg" },
-      { "id": 13, "name": "Filme 13", "image": "caminho/para/a/imagem13.jpg" },
-      { "id": 14, "name": "Filme 14", "image": "caminho/para/a/imagem14.jpg" },
-      { "id": 15, "name": "Filme 15", "image": "caminho/para/a/imagem15.jpg" },
-      { "id": 16, "name": "Filme 16", "image": "caminho/para/a/imagem16.jpg" },
-      { "id": 17, "name": "Filme 17", "image": "caminho/para/a/imagem17.jpg" },
-      { "id": 18, "name": "Filme 18", "image": "caminho/para/a/imagem18.jpg" },
-      { "id": 19, "name": "Filme 19", "image": "caminho/para/a/imagem19.jpg" },
-      { "id": 20, "name": "Filme 20", "image": "caminho/para/a/imagem20.jpg" }
+      { "id": 1, "name": "Batman", "image": "@/assets/Batman.png" },
+      { "id": 2, "name": "Django", "image": "@/assets/Django.png" },
+      { "id": 3, "name": "Indiana Jones", "image": "@/assets/Indiana_Jones.png" },
+      { "id": 4, "name": "Jumper", "image": "@/assets/Jumper.png" },
+      { "id": 5, "name": "Matrix", "image": "@/assets/Matrix.png" },
+      { "id": 6, "name": "Matrix 2", "image": "@/assets/Matrix_2.png" },
+      { "id": 7, "name": "Ace Ventura", "image": "@/assets/Ace_Ventura.png" },
+      { "id": 8, "name": "Fuga em Nova York", "image": "@/assets/Escape_from_New_York.png" },
+      { "id": 9, "name": "Panico", "image": "@/assets/Panico.png" },
+      { "id": 10, "name": "Capitã Marvel", "image": "@/assets/Captan_Marvel.png" }
     ]
   }
   

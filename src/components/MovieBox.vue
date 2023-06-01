@@ -1,7 +1,7 @@
 <template>
   <div class="movie-box">
-    <img :src="movie.image" alt="Movie Poster" />
-    <p>{{ movie.title }}</p>
+    <img :src="getImageUrl(movie.image)" :alt="movie.name" />
+    <p>{{ movie.name }}</p>
     <button @click="addToCart">Adicionar ao Carrinho</button>
   </div>
 </template>
@@ -15,6 +15,12 @@ export default {
     }
   },
   methods: {
+    getImageUrl(image) {
+      if (image.startsWith('@/assets/')) {
+        return require(`@/${image.substring(2)}`);
+      }
+      return image;
+    },
     addToCart() {
       // Lógica para adicionar o filme ao carrinho
     }
