@@ -1,6 +1,6 @@
 # projeto
 ## Como funciona o armazenamento:
-por meio do localstorage eu armazeno o id do usuario na sessão, para que dessa forma eu tenha um sistema simples de logar
+Locadora online com o Localstorage e Vue
 
 
 ## Project setup
@@ -26,5 +26,12 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Passo a Passo:
+
+- Insira um cadastro ou faça login com um existente;
+- escolha os filmes que quer colocar no carrinho (A adição de um mesmo filme é proposital pois poderia ser que um usuario quisesse comprar o mesmo filme para mais alguem)
+- Vá para o carrinho
+- Apos escolher o que quer feche o carrinho com o botão "Fechar carrinho"
+- Va para a estante e voce verá que tem os filmes que escolheu
+- Caso queira usar outro usuario apenas logue ou faça um novo cadastro
+
