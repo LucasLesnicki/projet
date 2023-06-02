@@ -4,14 +4,19 @@
     <form @submit.prevent="register">
       <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email" required>
+        <input type="email" id="email" v-model="email" autocomplete="username" required>
       </div>
       <div>
         <label for="password">Senha:</label>
-        <input type="password" id="password" v-model="password" required>
+        <input type="password" id="password" v-model="password" autocomplete="current-password" required>
       </div>
       <button type="submit">Cadastrar</button>
     </form>
+
+    <div v-if="showSuccessMessage">
+      Cadastro realizado com sucesso! Você pode fazer login agora.
+      <router-link to="/Login">Ir para a página de login</router-link>
+    </div>
   </div>
 </template>
 
@@ -21,9 +26,9 @@ import axios from '@/components/axios';
 export default {
   data() {
     return {
-      name: '',
       email: '',
-      password: ''
+      password: '',
+      showSuccessMessage: false
     };
   },
   methods: {
@@ -36,12 +41,9 @@ export default {
       };
 
       axios.post('/users', newUser)
-        .then(response => {
-          const user = response.data;
-          this.$store.dispatch('updateUser', { user }); // Atualizar a sessão do usuário no Vuex
-
-          // Redirecionar para a página do login após o cadastro
-          this.$router.push('/Login');
+        .then(() => {
+          // Exibir a mensagem de sucesso
+          this.showSuccessMessage = true;
         })
         .catch(error => {
           console.error(error);
@@ -52,5 +54,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
