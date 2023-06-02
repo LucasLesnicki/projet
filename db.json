@@ -4,26 +4,12 @@
       "id": 1,
       "email": "lucaslesnicki@gmail.com",
       "password": "1234",
-      "cart": [
-        {
-          "id": 1,
-          "name": "Batman",
-          "image": "@/assets/Batman.png"
-        },
+      "cart": [],
+      "shelf": [
         {
           "id": 3,
           "name": "Indiana Jones",
           "image": "@/assets/Indiana_Jones.png"
-        },
-        {
-          "id": 10,
-          "name": "Capitã Marvel",
-          "image": "@/assets/Captan_Marvel.png"
-        },
-        {
-          "id": 2,
-          "name": "Django",
-          "image": "@/assets/Django.png"
         },
         {
           "id": 8,
@@ -31,35 +17,51 @@
           "image": "@/assets/Escape_from_New_York.png"
         },
         {
+          "id": 7,
+          "name": "Ace Ventura",
+          "image": "@/assets/Ace_Ventura.png"
+        }
+      ]
+    },
+    {
+      "name": "Lucas",
+      "email": "lucaslesnicki18@gmail.com",
+      "password": "12345",
+      "cart": [
+        {
+          "id": 2,
+          "name": "Django",
+          "image": "@/assets/Django.png"
+        },
+        {
           "id": 3,
           "name": "Indiana Jones",
           "image": "@/assets/Indiana_Jones.png"
+        },
+        {
+          "id": 8,
+          "name": "Fuga em Nova York",
+          "image": "@/assets/Escape_from_New_York.png"
         }
       ],
-      "shelf": []
-    },
-    {
-      "id": 2,
-      "email": "lucaslesnicki18@gmail.com",
-      "password": "1234",
-      "cart": [],
-      "shelf": []
-    },
-    {
-      "name": "Lucas2",
-      "email": "lucaslesnicki188@gmail.com",
-      "password": "1234",
-      "cart": [],
-      "shelf": [],
-      "id": 3
-    },
-    {
-      "name": "111",
-      "email": "lucaslesnicki111228@gmail.com",
-      "password": "12345",
-      "cart": [],
-      "shelf": [],
-      "id": 4
+      "shelf": [
+        {
+          "id": 7,
+          "name": "Ace Ventura",
+          "image": "@/assets/Ace_Ventura.png"
+        },
+        {
+          "id": 4,
+          "name": "Jumper",
+          "image": "@/assets/Jumper.png"
+        },
+        {
+          "id": 2,
+          "name": "Django",
+          "image": "@/assets/Django.png"
+        }
+      ],
+      "id": 2
     }
   ],
   "movies": [

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import store from '../store'; // Importe o módulo Vuex
 
 const routes = [
   {
@@ -53,6 +52,5 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  store
 })
 export default router

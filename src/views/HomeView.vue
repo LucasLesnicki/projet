@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h1>Unilocadora</h1>
     <img alt="Vue logo" src="../assets/Fita.png">
     <div class="buttons">
       <router-link to="/login">Login</router-link> |

@@ -45,8 +45,8 @@ export default {
           const user = response.data;
           this.$store.dispatch('updateUser', { user }); // Atualizar a sessão do usuário no Vuex
 
-          // Redirecionar para a página do menu após o cadastro
-          this.$router.push('/Menu');
+          // Redirecionar para a página do login após o cadastro
+          this.$router.push('/Login');
         })
         .catch(error => {
           console.error(error);

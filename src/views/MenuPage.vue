@@ -2,7 +2,13 @@
   <div>
     <h1>Menu</h1>
     <div class="movie-container movie-grid">
-      <MovieBox v-for="movie in movies" :key="movie.id" :movie="movie" class="col-5" @add-to-cart="addToCart"></MovieBox>
+      <MovieBox
+        v-for="movie in movies"
+        :key="movie.id"
+        :movie="movie"
+        class="col-5"
+        @add-to-cart="addToCart"
+      ></MovieBox>
     </div>
     <button @click="goToCart">Carrinho</button>
   </div>
@@ -19,16 +25,17 @@ export default {
   data() {
     return {
       movies: [],
-      user: null, // Adiciona uma propriedade para armazenar os dados do usuário logado
+      user: null,
     };
   },
   created() {
-    this.fetchMovies(); // Chama a função para buscar a lista de filmes
-    this.fetchUser(); // Chama a função para buscar os dados do usuário logado
+    this.fetchMovies();
+    this.fetchUser();
   },
   methods: {
     fetchMovies() {
-      axios.get('http://localhost:3000/movies')
+      axios
+        .get('http://localhost:3000/movies')
         .then(response => {
           this.movies = response.data;
         })
@@ -37,16 +44,11 @@ export default {
         });
     },
     fetchUser() {
-      const userId = 1; // ID do usuário (substitua pelo ID correto)
-      axios.get(`http://localhost:3000/users/${userId}`)
+      const userId = localStorage.getItem('userId');
+      axios
+        .get(`http://localhost:3000/users/${userId}`)
         .then(response => {
           this.user = response.data;
-          if (!this.user.cart) {
-            this.user.cart = []; // Cria um carrinho vazio caso não exista
-          }
-          if (!this.user.shelf) {
-            this.user.shelf = []; // Cria uma estante vazia caso não exista
-          }
         })
         .catch(error => {
           console.error('Erro ao recuperar os dados do usuário:', error);
@@ -56,12 +58,16 @@ export default {
       this.$router.push('/Cart');
     },
     addToCart(movie) {
+      if (!this.user.cart) {
+        this.user.cart = []; // Inicializa o carrinho do usuário se estiver vazio
+      }
       this.user.cart.push(movie); // Adiciona o filme ao carrinho do usuário
-      this.updateUser(); // Chama a função para atualizar os dados do usuário no db.json
+      this.updateUser();
     },
     updateUser() {
-      const userId = this.user.id; // ID do usuário logado
-      axios.put(`http://localhost:3000/users/${userId}`, this.user)
+      const userId = this.user.id;
+      axios
+        .put(`http://localhost:3000/users/${userId}`, this.user)
         .then(response => {
           console.log(response.data);
         })

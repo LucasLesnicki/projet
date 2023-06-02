@@ -30,12 +30,12 @@ export default {
   },
   methods: {
     login() {
-      axios.get('/users')
+      axios.get('http://localhost:3000/users')
         .then(response => {
           const users = response.data;
           const user = users.find(u => u.email === this.email && u.password === this.password);
           if (user) {
-            // Defina o usuário logado no armazenamento local ou em um estado global, se necessário
+            localStorage.setItem('userId', user.id); // Armazena o ID do usuário logado no localStorage
             this.$router.push('/Menu');
           } else {
             this.errorMessage = 'Dados incorretos. Por favor, tente novamente.';
