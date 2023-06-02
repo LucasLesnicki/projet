@@ -33,4 +33,22 @@ nav {
     }
   }
 }
+
+button {
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #f4f7f8;
+  color: rgb(5, 5, 5);
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 </style>

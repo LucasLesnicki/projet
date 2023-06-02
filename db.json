@@ -5,7 +5,18 @@
       "email": "lucaslesnicki@gmail.com",
       "password": "1234",
       "cart": [],
-      "shelf": []
+      "shelf": [
+        {
+          "id": 2,
+          "name": "Django",
+          "image": "@/assets/Django.png"
+        },
+        {
+          "id": 3,
+          "name": "Indiana Jones",
+          "image": "@/assets/Indiana_Jones.png"
+        }
+      ]
     },
     {
       "email": "lucaslesnicki18@gmail.com",
