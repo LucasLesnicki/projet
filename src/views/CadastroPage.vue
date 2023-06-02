@@ -3,10 +3,6 @@
     <h2>Cadastro</h2>
     <form @submit.prevent="register">
       <div>
-        <label for="name">Nome:</label>
-        <input type="text" id="name" v-model="name" required>
-      </div>
-      <div>
         <label for="email">Email:</label>
         <input type="email" id="email" v-model="email" required>
       </div>
@@ -33,7 +29,6 @@ export default {
   methods: {
     register() {
       const newUser = {
-        name: this.name,
         email: this.email,
         password: this.password,
         cart: [],
@@ -57,5 +52,5 @@ export default {
 </script>
 
 <style scoped>
-/* Adicione aqui os estilos personalizados para a página de cadastro */
+
 </style>

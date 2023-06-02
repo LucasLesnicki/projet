@@ -50,5 +50,4 @@ export default {
 </script>
 
 <style scoped>
-/* Adicione aqui os estilos personalizados para a página de login */
 </style>
